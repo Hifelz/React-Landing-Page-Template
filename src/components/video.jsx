@@ -1,13 +1,20 @@
 import React from "react";
 
-export const About = (props) => {
+export const Video = (props) => {
   return (
-    <div id="about">
+    <div id="video">
       <div className="container">
         <div className="row">
           <div className="col-xs-12 col-md-6">
-            {" "}
-            <img src="img/about.jpg" className="img-responsive" alt="" />{" "}
+            {/* Substituir a imagem pelo link do vídeo do YouTube */}
+            <iframe
+              width="100%"
+              height="315"
+              src={props.data ? props.data.youtubeLink : ""}
+              title="YouTube Video"
+              frameBorder="0"
+              allowFullScreen
+            ></iframe>
           </div>
           <div className="col-xs-12 col-md-6">
             <div className="about-text">
@@ -28,7 +35,7 @@ export const About = (props) => {
                   <ul>
                     {props.data
                       ? props.data.Why2.map((d, i) => (
-                          <li key={`${d}-${i}`}> {d}</li>
+                          <li key={`${d}-${i}`}>{d}</li>
                         ))
                       : "loading"}
                   </ul>
